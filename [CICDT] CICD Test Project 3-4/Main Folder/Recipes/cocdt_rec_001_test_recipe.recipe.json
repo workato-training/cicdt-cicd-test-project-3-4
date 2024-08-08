@@ -1,7 +1,7 @@
 {
   "name": "[COCDT] | REC-001 - Test Recipe",
   "description": "",
-  "version": 3,
+  "version": 4,
   "private": true,
   "concurrency": 1,
   "code": {
@@ -59,6 +59,45 @@
     "block": [
       {
         "number": 1,
+        "provider": "workato_recipe_function",
+        "name": "call_recipe",
+        "as": "5c824137",
+        "title": null,
+        "description": "Call <span class=\"provider\">Test Function</span>",
+        "keyword": "action",
+        "dynamicPickListSelection": {
+          "flow_id": "Test Function"
+        },
+        "input": {
+          "flow_id": {
+            "zip_name": "[CICDT] CICD Test Project 3-4/Main Folder/Local Functions/test_function.recipe.json",
+            "name": "Test Function",
+            "folder": "[CICDT] CICD Test Project 3-4/Main Folder/Local Functions"
+          },
+          "parameters": {
+            "param1": "123"
+          }
+        },
+        "extended_input_schema": [
+          {
+            "label": "Parameters",
+            "name": "parameters",
+            "properties": [
+              {
+                "control_type": "text",
+                "label": "Param 1",
+                "name": "param1",
+                "type": "string",
+                "optional": false
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "uuid": "ab2ad576-f8a5-414d-bdbb-cde66fc3acd4"
+      },
+      {
+        "number": 2,
         "provider": "logger",
         "name": "log_message",
         "as": "9f181629",
@@ -98,6 +137,12 @@
     {
       "keyword": "application",
       "provider": "logger",
+      "skip_validation": false,
+      "account_id": null
+    },
+    {
+      "keyword": "application",
+      "provider": "workato_recipe_function",
       "skip_validation": false,
       "account_id": null
     }
