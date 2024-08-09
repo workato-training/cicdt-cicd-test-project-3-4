@@ -1,7 +1,7 @@
 {
   "name": "Test Function",
   "description": "",
-  "version": 2,
+  "version": 4,
   "private": true,
   "concurrency": 1,
   "code": {
@@ -42,7 +42,7 @@
         "keyword": "action",
         "input": {
           "user_logs_enabled": "false",
-          "message": "#{_dp('{\"pill_type\":\"output\",\"provider\":\"workato_recipe_function\",\"line\":\"267983a2\",\"path\":[\"parameters\",\"param1\"]}')}:#{_dp('{\"pill_type\":\"output\",\"provider\":\"workato_recipe_function\",\"line\":\"267983a2\",\"path\":[\"context\",\"calling_job_id\"]}')}:#{_dp('{\"pill_type\":\"output\",\"provider\":\"workato_recipe_function\",\"line\":\"267983a2\",\"path\":[\"context\",\"calling_recipe_id\"]}')}"
+          "message": "#{_dp('{\"pill_type\":\"output\",\"provider\":\"workato_recipe_function\",\"line\":\"267983a2\",\"path\":[\"parameters\",\"param1\"]}')}:#{_dp('{\"pill_type\":\"output\",\"provider\":\"workato_recipe_function\",\"line\":\"267983a2\",\"path\":[\"context\",\"calling_job_id\"]}')}"
         },
         "extended_input_schema": [
           {
@@ -61,6 +61,33 @@
       },
       {
         "number": 2,
+        "provider": "logger",
+        "name": "log_message",
+        "as": "47bebc3f",
+        "title": null,
+        "description": "Log <span class=\"provider\">message</span> to <span class=\"provider\">Job report</span>",
+        "keyword": "action",
+        "input": {
+          "user_logs_enabled": "false",
+          "message": "#{_dp('{\"pill_type\":\"output\",\"provider\":\"workato_recipe_function\",\"line\":\"267983a2\",\"path\":[\"context\",\"calling_recipe_id\"]}')}"
+        },
+        "extended_input_schema": [
+          {
+            "control_type": "switch",
+            "default": false,
+            "disable_formula": true,
+            "extends_schema": true,
+            "hint": "                Send a copy of the message to Workato logs.\n                <a href=\"https://docs.workato.com/features/logging-service.html\" target=\"_blank\" class=\"ng-scope\">\n                  Learn more\n                </a>\n",
+            "label": "Send to Workato log service",
+            "name": "user_logs_enabled",
+            "optional": true,
+            "type": "string"
+          }
+        ],
+        "uuid": "ab659055-3979-4cec-a14a-32020f726c62"
+      },
+      {
+        "number": 3,
         "provider": "workato_recipe_function",
         "name": "return_result",
         "as": "02dec425",

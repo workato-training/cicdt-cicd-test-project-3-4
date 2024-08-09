@@ -1,7 +1,7 @@
 {
   "name": "Test Recipe 2",
   "description": "",
-  "version": 2,
+  "version": 3,
   "private": true,
   "concurrency": 1,
   "code": {
@@ -83,6 +83,33 @@
           }
         ],
         "uuid": "7de8842a-47c8-4ba4-a0fc-2cf63d565fac"
+      },
+      {
+        "number": 2,
+        "provider": "logger",
+        "name": "log_message",
+        "as": "e83a8613",
+        "title": null,
+        "description": "Log <span class=\"provider\">message</span> to <span class=\"provider\">Job report</span>",
+        "keyword": "action",
+        "input": {
+          "user_logs_enabled": "false",
+          "message": "#{_dp('{\"pill_type\":\"output\",\"provider\":\"clock\",\"line\":\"158ee50e\",\"path\":[\"scheduled_time\"]}')}:#{_dp('{\"pill_type\":\"output\",\"provider\":\"clock\",\"line\":\"158ee50e\",\"path\":[\"scheduled_day\"]}')}:"
+        },
+        "extended_input_schema": [
+          {
+            "control_type": "switch",
+            "default": false,
+            "disable_formula": true,
+            "extends_schema": true,
+            "hint": "                Send a copy of the message to Workato logs.\n                <a href=\"https://docs.workato.com/features/logging-service.html\" target=\"_blank\" class=\"ng-scope\">\n                  Learn more\n                </a>\n",
+            "label": "Send to Workato log service",
+            "name": "user_logs_enabled",
+            "optional": true,
+            "type": "string"
+          }
+        ],
+        "uuid": "4bc2bc01-a439-49a6-8bbf-8496c71ab74c"
       }
     ],
     "uuid": "507623d2-10c7-4649-a5c7-9d32429ff0f2",
